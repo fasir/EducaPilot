@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Sparkles, 
-  ArrowRight, 
-  Layers, 
-  BookOpen, 
-  CheckCircle2, 
-  BarChart3, 
-  Zap, 
-  Play, 
-  Check, 
-  TrendingUp, 
-  Timer, 
-  CreditCard, 
-  Bus, 
+import {
+  Sparkles,
+  ArrowRight,
+  Layers,
+  BookOpen,
+  CheckCircle2,
+  BarChart3,
+  Zap,
+  Play,
+  Check,
+  TrendingUp,
+  Timer,
+  CreditCard,
+  Bus,
   Cpu,
   Users
 } from 'lucide-react';
@@ -44,7 +44,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Floating Badge */}
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,11 +67,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </span>
             <ArrowRight className="w-3 h-3 text-slate-400 group-hover:text-sky-300 group-hover:translate-x-0.5 transition-all" />
           </motion.div>
-        </div>
+        </div> */}
 
         {/* Main Headline & Value Proposition */}
         <div className="text-center mt-6 max-w-4xl mx-auto">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -80,7 +80,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             Next-Gen <span className="bg-gradient-to-r from-sky-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">School ERP</span>, Intelligent LMS &amp; <span className="bg-gradient-to-r from-sky-300 via-indigo-400 to-purple-300 bg-clip-text text-transparent">Test-Ex</span> Engine
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -90,7 +90,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </motion.p>
 
           {/* Primary Action Buttons */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -114,7 +114,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </motion.div>
 
           {/* Highlights Mini Pills */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -140,7 +140,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         {/* Interactive Live Sandbox Preview Window */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
@@ -171,44 +171,40 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <div className="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800">
                   <button
                     onClick={() => setActiveHeroTab('erp')}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                      activeHeroTab === 'erp'
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${activeHeroTab === 'erp'
                         ? 'bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow'
                         : 'text-slate-400 hover:text-slate-200'
-                    }`}
+                      }`}
                   >
                     <Layers className="w-3.5 h-3.5" />
                     <span>School ERP</span>
                   </button>
                   <button
                     onClick={() => setActiveHeroTab('lms')}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                      activeHeroTab === 'lms'
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${activeHeroTab === 'lms'
                         ? 'bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow'
                         : 'text-slate-400 hover:text-slate-200'
-                    }`}
+                      }`}
                   >
                     <BookOpen className="w-3.5 h-3.5" />
                     <span>LMS</span>
                   </button>
                   <button
                     onClick={() => setActiveHeroTab('testex')}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                      activeHeroTab === 'testex'
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${activeHeroTab === 'testex'
                         ? 'bg-gradient-to-r from-sky-400 via-indigo-500 to-purple-600 text-white font-bold shadow'
                         : 'text-slate-400 hover:text-slate-200'
-                    }`}
+                      }`}
                   >
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     <span>Test-Ex CBT</span>
                   </button>
                   <button
                     onClick={() => setActiveHeroTab('analytics')}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                      activeHeroTab === 'analytics'
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${activeHeroTab === 'analytics'
                         ? 'bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow'
                         : 'text-slate-400 hover:text-slate-200'
-                    }`}
+                      }`}
                   >
                     <BarChart3 className="w-3.5 h-3.5" />
                     <span>Analytics</span>

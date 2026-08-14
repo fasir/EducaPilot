@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Layers, 
-  BookOpen, 
-  CheckCircle2, 
-  BarChart3, 
-  Sparkles, 
-  Menu, 
-  X, 
-  PhoneCall, 
+import {
+  Layers,
+  BookOpen,
+  CheckCircle2,
+  BarChart3,
+  Sparkles,
+  Menu,
+  X,
+  PhoneCall,
   ArrowRight,
   ShieldCheck,
   ChevronRight
@@ -55,18 +55,17 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <>
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-slate-900/90 backdrop-blur-xl border-b border-slate-800/80 shadow-xl shadow-slate-950/20 py-2.5' 
-            : 'bg-transparent py-4'
-        }`}
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 sh ${isScrolled
+          ? 'bg-slate-900/90 backdrop-blur-xl border-b border-slate-800/80 shadow-xl shadow-slate-950/20 py-2.5'
+          : 'bg-transparent py-4'
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Brand Official Logo */}
-            <a 
-              href="#" 
+            <a
+              href="#"
               className="flex items-center group focus:outline-none focus:ring-2 focus:ring-sky-500 rounded-xl"
               aria-label="EducaPilot Home"
             >
@@ -74,7 +73,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </a>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-1 bg-slate-950/80 p-1.5 rounded-full border border-slate-800/90 backdrop-blur-md shadow-inner">
+            <nav className="hidden lg:flex items-center gap-1 bg-white p-1.5 rounded-full backdrop-blur-md shadow-inner">
               {navItems.map((item) => {
                 const isSelected = item.isPillar && activePillar === item.id;
                 return (
@@ -88,11 +87,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                         scrollToSection(item.id);
                       }
                     }}
-                    className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${
-                      isSelected
-                        ? 'bg-gradient-to-r from-sky-500 via-indigo-600 to-purple-600 text-white shadow-md shadow-indigo-500/25'
-                        : 'text-slate-300 hover:text-white hover:bg-slate-800/70'
-                    }`}
+                    className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${isSelected
+                      ? 'bg-gradient-to-r from-sky-500 via-indigo-600 to-purple-600 text-white shadow-md shadow-indigo-500/25'
+                      : 'text-black hover:text-white hover:bg-slate-800/70'
+                      }`}
                   >
                     <span className={isSelected ? 'text-sky-200' : 'text-slate-400'}>
                       {item.icon}
@@ -156,11 +154,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                     onSelectPillar(item.id);
                     scrollToSection(item.id);
                   }}
-                  className={`flex flex-col items-center justify-center gap-1.5 p-2.5 rounded-xl text-center text-xs font-medium border transition-all ${
-                    activePillar === item.id
-                      ? 'bg-indigo-600/20 border-indigo-500/40 text-sky-200'
-                      : 'bg-slate-900/70 border-slate-800 text-slate-300 hover:bg-slate-800'
-                  }`}
+                  className={`flex flex-col items-center justify-center gap-1.5 p-2.5 rounded-xl text-center text-xs font-medium border transition-all ${activePillar === item.id
+                    ? 'bg-indigo-600/20 border-indigo-500/40 text-sky-200'
+                    : 'bg-slate-900/70 border-slate-800 text-slate-300 hover:bg-slate-800'
+                    }`}
                 >
                   <span className="p-1 rounded-lg bg-slate-800 text-sky-400">
                     {item.icon}

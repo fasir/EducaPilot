@@ -1,0 +1,6 @@
+{
+  "name": "EducaPilot - Unified Education Operating System",
+  "description": "Redesigned next-generation platform for School ERP, LMS, Test-Ex competitive exam preparation, and real-time student analytics with lite deployment steps.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

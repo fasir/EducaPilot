@@ -60,7 +60,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
       >
         {/* Modal Header */}
         <div className="p-5 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
-          <EducaPilotLogo variant="dark" />
+          <EducaPilotLogo variant="light" />
 
           <button
             onClick={onClose}

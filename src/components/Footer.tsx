@@ -30,7 +30,7 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Col 1: Brand & Overview with Exact Official Logo */}
           <div className="lg:col-span-2 space-y-4">
             <a href="#" className="inline-block">
-              <EducaPilotLogo variant="dark" />
+              <EducaPilotLogo variant="light" />
             </a>
 
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm">

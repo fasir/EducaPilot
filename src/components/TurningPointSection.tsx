@@ -259,7 +259,7 @@ export const TurningPointSection: React.FC = () => {
                   <span>The Legacy Friction</span>
                 </div>
                 <strong className="text-slate-900 text-sm block mb-1">{active.painTitle}</strong>
-                <p className="text-xs text-slate-600 leading-relaxed">{active.pain}</p>
+                <p className="text-[13.5px] text-slate-600 leading-relaxed">{active.pain}</p>
               </div>
 
               {/* EducaPilot Momentum Block */}
@@ -269,18 +269,18 @@ export const TurningPointSection: React.FC = () => {
                   <span>EducaPilot Breakthrough</span>
                 </div>
                 <strong className="text-slate-900 text-sm block mb-1">{active.solutionTitle}</strong>
-                <p className="text-xs text-slate-600 leading-relaxed">{active.solution}</p>
+                <p className="text-[13.5px] text-slate-600 leading-relaxed">{active.solution}</p>
               </div>
             </div>
 
             {/* Impact Highlights & Bullet Checklist */}
             <div className="turning-point__feature-list">
-              <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block mb-2">
+              <span className="text-[13px] font-bold text-slate-500 uppercase tracking-wider block mb-2">
                 Key AI Capabilities &amp; Impact
               </span>
               <div className="space-y-2">
                 {active.features.map((feat, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
+                  <div key={idx} className="flex items-start gap-2 text-[13px] text-slate-700">
                     <CheckCircle2 size={15} className="text-emerald-600 shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </div>
@@ -292,9 +292,9 @@ export const TurningPointSection: React.FC = () => {
             <div className="turning-point__metric-strip">
               <div className="flex items-baseline gap-2">
                 <span className="text-2xl font-bold text-purple-700 font-mono">{active.metric}</span>
-                <span className="text-xs text-slate-600 font-medium">{active.metricLabel}</span>
+                <span className="text-[13px] text-slate-600 font-medium">{active.metricLabel}</span>
               </div>
-              <div className="flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/80">
+              <div className="flex items-center gap-1.5 text-[13px] font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/80">
                 <TrendingUp size={14} />
                 <span>{active.outcome}</span>
               </div>
@@ -318,10 +318,10 @@ export const TurningPointSection: React.FC = () => {
                   <Cpu size={14} className="text-purple-600" />
                 </div>
                 <div>
-                  <span className="block text-[10px] text-slate-500 font-semibold uppercase tracking-wider">
+                  <span className="block text-[13px] text-slate-500 font-semibold uppercase tracking-wider">
                     Engine Status
                   </span>
-                  <span className="block text-xs font-bold text-slate-900">
+                  <span className="block text-[13.5px] font-bold text-slate-900">
                     {active.telemetry}
                   </span>
                 </div>
@@ -330,16 +330,16 @@ export const TurningPointSection: React.FC = () => {
               {/* Floating Metric Badge Bottom */}
               <div className="turning-point__float-badge turning-point__float-badge--bottom">
                 <div className="flex items-center justify-between gap-3 mb-1">
-                  <span className="text-[10px] font-bold text-purple-700 uppercase tracking-wider">
+                  <span className="text-[13px] font-bold text-purple-700 uppercase tracking-wider">
                     Measurable Result
                   </span>
-                  <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800">
+                  <span className="px-2 py-0.5 rounded text-[13px] font-bold bg-emerald-100 text-emerald-800">
                     Verified
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-xl font-bold text-slate-900 font-mono">{active.metric}</span>
-                  <span className="text-[11px] text-slate-600 leading-tight">{active.metricLabel}</span>
+                  <span className="text-[13px] text-slate-600 leading-tight">{active.metricLabel}</span>
                 </div>
               </div>
             </div>

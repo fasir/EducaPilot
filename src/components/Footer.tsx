@@ -24,9 +24,9 @@ export const Footer: React.FC<FooterProps> = ({
   };
 
   return (
-    <footer className="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+    <footer className="site-footer bg-slate-950 border-t border-slate-800 text-slate-400 text-xs">
+      <div className="site-footer__inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="site-footer__grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Col 1: Brand & Overview with Exact Official Logo */}
           <div className="lg:col-span-2 space-y-4">
             <a href="#" className="inline-block">
@@ -34,7 +34,7 @@ export const Footer: React.FC<FooterProps> = ({
             </a>
 
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
-              Empowering 1,200+ schools, colleges, and competitive coaching academies worldwide with Next-Gen ERP, Intelligent LMS, Test-Ex CBT Exam Simulation, and Real-Time Student Diagnostic Analytics.
+              One connected platform for school operations, learning, assessments, and student progress.
             </p>
 
             <div className="flex items-center gap-2 text-[11px] text-emerald-400 font-mono">
@@ -109,12 +109,11 @@ export const Footer: React.FC<FooterProps> = ({
               Test-Ex Syllabus Banks
             </div>
             <ul className="space-y-2 text-slate-400">
-              <li>NEET-UG Medical Bank (720 Scale)</li>
+              <li>NEET-UG Medical Bank</li>
               <li>IIT-JEE Main &amp; Advanced</li>
               <li>Digital SAT &amp; AP Exams</li>
               <li>UPSC Civil Services Prelims</li>
               <li>CBSE &amp; ICSE Board Question Banks</li>
-              <li>Olympiads &amp; KVPY Series</li>
             </ul>
           </div>
 
@@ -148,7 +147,7 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
 
         {/* Bottom copyright & legal */}
-        <div className="mt-12 pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+        <div className="site-footer__bottom mt-12 pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
           <div>
             © {new Date().getFullYear()} EducaPilot Inc. All rights reserved. ISO 27001 &amp; SOC-2 Certified.
           </div>

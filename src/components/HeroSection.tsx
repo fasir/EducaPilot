@@ -33,7 +33,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal, onOpe
           </motion.div>
 
           <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.1 }}>
-           Next-Gen School ERP, Intelligent LMS & Test-Ex Engine
+            Next-Gen School ERP, Intelligent LMS & Test-Ex Engine
           </motion.h1>
 
           <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.2 }}>
@@ -42,8 +42,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal, onOpe
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.3 }} className="hero-actions">
-            <button type="button" onClick={onOpenDemoModal} className="hero-button hero-button--light">Explore Courses</button>
-            <button type="button" onClick={onOpenTestExSimulator} className="hero-button hero-button--primary">Browse Courses</button>
+            <button type="button" onClick={onOpenDemoModal} className="hero-button hero-button--light">Start for Free</button>
+            <button type="button" onClick={onOpenTestExSimulator} className="hero-button hero-button--primary">Free Demo</button>
             <ArrowRight className="hero-arrow" aria-hidden="true" />
           </motion.div>
         </div>

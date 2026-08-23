@@ -82,7 +82,7 @@ export const StudentShowcaseStrip: React.FC<StudentShowcaseStripProps> = ({
           <h2>
             Live E-Learning &amp; Student<br /><span>Experience Showcase</span>
           </h2>
-          <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <p className="mt-3 text-sm text-slate-600 leading-relaxed">
             See how over 850,000 students, faculty, and parents interact with EducaPilot daily across high-speed web and native mobile interfaces.
           </p>
         </div>
@@ -112,7 +112,7 @@ export const StudentShowcaseStrip: React.FC<StudentShowcaseStripProps> = ({
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/10 to-transparent" />
 
                     {/* Top Category Tag */}
-                    <span className={`absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider backdrop-blur-md shadow-sm ${item.tagColor}`}>
+                    <span className={`absolute top-3 left-3 px-3 py-1 rounded-full text-[13px] font-bold uppercase tracking-wider backdrop-blur-md shadow-sm ${item.tagColor}`}>
                       {item.tag}
                     </span>
 
@@ -127,7 +127,7 @@ export const StudentShowcaseStrip: React.FC<StudentShowcaseStripProps> = ({
                     <h3 className="text-base font-bold text-slate-900 group-hover:text-purple-700 transition-colors leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="text-[13.5px] text-slate-600 leading-relaxed">
                       {item.subtitle}
                     </p>
                   </div>
@@ -135,7 +135,7 @@ export const StudentShowcaseStrip: React.FC<StudentShowcaseStripProps> = ({
 
                 {/* Card Metric Footer */}
                 <div className="px-5 py-3.5 bg-white/75 backdrop-blur-sm border-t border-white/80 flex items-center justify-between">
-                  <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[11px] font-bold ${item.metricColor}`}>
+                  <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[13px] font-bold ${item.metricColor}`}>
                     <TrendingUp className="w-3.5 h-3.5" />
                     <span>{item.metric}</span>
                   </div>

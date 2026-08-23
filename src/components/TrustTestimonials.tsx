@@ -33,7 +33,7 @@ export const TrustTestimonials: React.FC = () => {
           <h2>
             Trusted by<br /><span>1,200+ Leaders</span>
           </h2>
-          <p className="mt-3 text-slate-600 text-xs sm:text-sm leading-relaxed">
+          <p className="mt-3 text-slate-600 text-sm leading-relaxed">
             See how top international K-12 institutions and competitive coaching academies transform student outcomes and operations with EducaPilot.
           </p>
         </div>
@@ -61,7 +61,7 @@ export const TrustTestimonials: React.FC = () => {
                   </div>
 
                   {/* Quote Body */}
-                  <p className="text-xs sm:text-[13px] text-slate-700 leading-relaxed italic">
+                  <p className="text-[13.5px] sm:text-sm text-slate-700 leading-relaxed italic">
                     "{item.quote}"
                   </p>
                 </div>
@@ -76,16 +76,16 @@ export const TrustTestimonials: React.FC = () => {
                       referrerPolicy="no-referrer"
                     />
                     <div className="min-w-0">
-                      <div className="text-xs font-bold text-slate-900 group-hover:text-purple-700 transition-colors truncate">
+                      <div className="text-[13.5px] font-bold text-slate-900 group-hover:text-purple-700 transition-colors truncate">
                         {item.name}
                       </div>
-                      <div className="text-[11px] text-slate-500 truncate">{item.designation}</div>
-                      <div className="text-[10.5px] text-purple-700 font-semibold truncate">{item.institution}</div>
+                      <div className="text-[13px] text-slate-500 truncate">{item.designation}</div>
+                      <div className="text-[13px] text-purple-700 font-semibold truncate">{item.institution}</div>
                     </div>
                   </div>
 
                   {/* Impact Metric Pill */}
-                  <div className={`px-3 py-1.5 rounded-xl border text-[11px] font-mono font-bold text-center ${tone.tagBg}`}>
+                  <div className={`px-3 py-1.5 rounded-xl border text-[13px] font-bold text-center ${tone.tagBg}`}>
                     {item.impactMetrics}
                   </div>
                 </div>
@@ -98,26 +98,26 @@ export const TrustTestimonials: React.FC = () => {
         <div className="mt-14 p-5 sm:p-6 rounded-2xl bg-white/80 backdrop-blur-md border border-white/90 grid grid-cols-2 md:grid-cols-4 gap-5 items-center text-center shadow-lg shadow-purple-950/5 text-slate-800">
           <div className="flex flex-col items-center space-y-1">
             <ShieldCheck className="w-5 h-5 text-purple-600" />
-            <span className="text-xs font-bold text-slate-900">ISO 27001 Certified</span>
-            <span className="text-[10px] text-slate-500">Bank-Grade Encryption</span>
+            <span className="text-[13.5px] font-bold text-slate-900">ISO 27001 Certified</span>
+            <span className="text-[13px] text-slate-500">Bank-Grade Encryption</span>
           </div>
 
           <div className="flex flex-col items-center space-y-1">
             <Lock className="w-5 h-5 text-indigo-600" />
-            <span className="text-xs font-bold text-slate-900">FERPA &amp; GDPR Compliant</span>
-            <span className="text-[10px] text-slate-500">100% Student Privacy Guard</span>
+            <span className="text-[13.5px] font-bold text-slate-900">FERPA &amp; GDPR Compliant</span>
+            <span className="text-[13px] text-slate-500">100% Student Privacy Guard</span>
           </div>
 
           <div className="flex flex-col items-center space-y-1">
             <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-            <span className="text-xs font-bold text-slate-900">99.99% Uptime SLA</span>
-            <span className="text-[10px] text-slate-500">Zero-Lag Cloud Architecture</span>
+            <span className="text-[13.5px] font-bold text-slate-900">99.99% Uptime SLA</span>
+            <span className="text-[13px] text-slate-500">Zero-Lag Cloud Architecture</span>
           </div>
 
           <div className="flex flex-col items-center space-y-1">
             <Award className="w-5 h-5 text-amber-600" />
-            <span className="text-xs font-bold text-slate-900">24/7 Dedicated Support</span>
-            <span className="text-[10px] text-slate-500">&lt; 5-Min Priority Response</span>
+            <span className="text-[13.5px] font-bold text-slate-900">24/7 Dedicated Support</span>
+            <span className="text-[13px] text-slate-500">&lt; 5-Min Priority Response</span>
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ export const InteractiveFaq: React.FC = () => {
 
   const filteredFaqs = FAQS.filter((faq) => {
     const matchesCategory = activeCategory === 'All' || faq.category === activeCategory;
-    const matchesSearch = 
+    const matchesSearch =
       faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
       faq.answer.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
@@ -34,13 +34,10 @@ export const InteractiveFaq: React.FC = () => {
       <div className="absolute bottom-10 left-10 w-[450px] h-[450px] bg-indigo-200/30 rounded-full blur-[130px] pointer-events-none -z-10" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-sky-200/80 text-sky-800 text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-md">
-            <HelpCircle className="w-3.5 h-3.5 text-sky-600" />
-            <span>Got Questions?</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight">
-            Frequently Asked <span className="bg-gradient-to-r from-sky-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Questions</span>
+        <div className="section-heading text-center max-w-3xl mx-auto">
+
+          <h2>
+            Frequently Asked<br /><span>Questions</span>
           </h2>
           <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
             Everything you need to know about migrating your school to EducaPilot's unified operating system.
@@ -65,11 +62,10 @@ export const InteractiveFaq: React.FC = () => {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
-                  activeCategory === cat
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${activeCategory === cat
                     ? 'bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-md shadow-indigo-600/20'
                     : 'bg-white/80 backdrop-blur-sm text-slate-600 hover:text-slate-900 border border-slate-200/80 shadow-xs'
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -94,9 +90,8 @@ export const InteractiveFaq: React.FC = () => {
                   <span className="text-sm font-bold text-slate-900 leading-snug">
                     {faq.question}
                   </span>
-                  <div className={`w-7 h-7 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center shrink-0 transition-transform duration-200 ${
-                    isOpen ? 'rotate-180 text-indigo-600 bg-indigo-50 border-indigo-200' : 'text-slate-500'
-                  }`}>
+                  <div className={`w-7 h-7 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180 text-indigo-600 bg-indigo-50 border-indigo-200' : 'text-slate-500'
+                    }`}>
                     <ChevronDown className="w-4 h-4" />
                   </div>
                 </button>

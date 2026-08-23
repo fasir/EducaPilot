@@ -2,16 +2,9 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { WhyEducaPilotSection } from './components/WhyEducaPilotSection';
+import { TurningPointSection } from './components/TurningPointSection';
 import { CoreFeaturesSection } from './components/CoreFeaturesSection';
 import { StudentShowcaseStrip } from './components/StudentShowcaseStrip';
-import { SchoolErpSection } from './components/SchoolErpSection';
-import { LmsPlatformSection } from './components/LmsPlatformSection';
-import { TestExSection } from './components/TestExSection';
-import { AnalyticsSection } from './components/AnalyticsSection';
-import { LiteStepsSection } from './components/LiteStepsSection';
-import { RoiCalculatorSection } from './components/RoiCalculatorSection';
-import { RoleExperienceSection } from './components/RoleExperienceSection';
-import { ComparisonMatrix } from './components/ComparisonMatrix';
 import { TrustTestimonials } from './components/TrustTestimonials';
 import { InteractiveFaq } from './components/InteractiveFaq';
 import { DemoModal } from './components/DemoModal';
@@ -69,6 +62,8 @@ export default function App() {
           onOpenTestExSimulator={handleOpenTestExSimulator}
         />
 
+        <TurningPointSection />
+
         <CoreFeaturesSection />
 
         {/* Live E-Learning Students Visual Showcase Strip */}
@@ -80,14 +75,7 @@ export default function App() {
        
 
       
-       
 
-
-        {/* Interactive ROI & Efficiency Calculator (Light Canvas) */}
-        <RoiCalculatorSection onOpenDemoModal={handleOpenDemoModal} />
-
-        {/* Market Benchmark Comparison Matrix (Dark Ambient Cockpit) */}
-        <ComparisonMatrix />
 
         {/* Trust & Testimonials (Light Canvas) */}
         <TrustTestimonials />

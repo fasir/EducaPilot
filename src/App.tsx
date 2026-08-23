@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
+import { WhyEducaPilotSection } from './components/WhyEducaPilotSection';
+import { CoreFeaturesSection } from './components/CoreFeaturesSection';
 import { StudentShowcaseStrip } from './components/StudentShowcaseStrip';
 import { SchoolErpSection } from './components/SchoolErpSection';
 import { LmsPlatformSection } from './components/LmsPlatformSection';
@@ -44,7 +46,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 font-sans selection:bg-sky-500 selection:text-white pb-16 sm:pb-0">
+    <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-blue-200 selection:text-slate-900 pb-16 sm:pb-0">
       {/* Top Navbar */}
       <Navbar
         activePillar={activePillar}
@@ -62,29 +64,24 @@ export default function App() {
           onOpenTestExSimulator={handleOpenTestExSimulator}
         />
 
+        <WhyEducaPilotSection
+          onOpenDemoModal={handleOpenDemoModal}
+          onOpenTestExSimulator={handleOpenTestExSimulator}
+        />
+
+        <CoreFeaturesSection />
+
         {/* Live E-Learning Students Visual Showcase Strip */}
         <StudentShowcaseStrip
           onOpenDemoModal={handleOpenDemoModal}
           onOpenTestExSimulator={handleOpenTestExSimulator}
         />
 
-        {/* Pillar 01: School ERP (Light Canvas) */}
-        <SchoolErpSection />
+       
 
-        {/* Pillar 02: LMS Platform (Dark Ambient Cockpit) */}
-        <LmsPlatformSection />
+      
+       
 
-        {/* Pillar 03: Test-Ex High-Stakes Competitive Exam Engine (Light Canvas) */}
-        <TestExSection onOpenDemoModal={handleOpenDemoModal} />
-
-        {/* Pillar 04: Real-Time Student Performance Analytics (Dark Ambient Cockpit) */}
-        <AnalyticsSection />
-
-        {/* Lite Steps Zero-Downtime Migration Framework (Light Canvas) */}
-        <LiteStepsSection onOpenDemoModal={handleOpenDemoModal} />
-
-        {/* Role-Based Stakeholder Experience Selector (Dark Ambient Cockpit) */}
-        <RoleExperienceSection />
 
         {/* Interactive ROI & Efficiency Calculator (Light Canvas) */}
         <RoiCalculatorSection onOpenDemoModal={handleOpenDemoModal} />
@@ -97,6 +94,7 @@ export default function App() {
 
         {/* Searchable FAQ Accordion (Light Canvas) */}
         <InteractiveFaq />
+
       </main>
 
       {/* Footer */}
@@ -113,13 +111,13 @@ export default function App() {
       />
 
       {/* Mobile Sticky Quick-Dock for Touch-Friendly Navigation */}
-      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-950/90 border-t border-slate-800 p-2.5 backdrop-blur-xl flex items-center justify-around gap-1">
+      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 border-t border-slate-200 p-2.5 backdrop-blur-xl flex items-center justify-around gap-1 shadow-lg shadow-slate-200/50">
         <button
           onClick={() => {
             setActivePillar('erp');
             document.getElementById('erp')?.scrollIntoView({ behavior: 'smooth' });
           }}
-          className="flex flex-col items-center gap-1 p-1 text-[10px] text-slate-400 hover:text-sky-300"
+          className="flex flex-col items-center gap-1 p-1 text-[10px] text-slate-500 hover:text-blue-600"
         >
           <Layers className="w-4 h-4" />
           <span>ERP</span>
@@ -130,7 +128,7 @@ export default function App() {
             setActivePillar('lms');
             document.getElementById('lms')?.scrollIntoView({ behavior: 'smooth' });
           }}
-          className="flex flex-col items-center gap-1 p-1 text-[10px] text-slate-400 hover:text-sky-300"
+          className="flex flex-col items-center gap-1 p-1 text-[10px] text-slate-500 hover:text-blue-600"
         >
           <BookOpen className="w-4 h-4" />
           <span>LMS</span>
@@ -138,7 +136,7 @@ export default function App() {
 
         <button
           onClick={handleOpenTestExSimulator}
-          className="flex flex-col items-center gap-1 p-1.5 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-bold text-[10px] shadow-lg shadow-indigo-600/30"
+          className="flex flex-col items-center gap-1 p-1.5 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold text-[10px] shadow-lg shadow-indigo-500/25"
         >
           <CheckCircle2 className="w-4 h-4" />
           <span>Test-Ex</span>
@@ -149,7 +147,7 @@ export default function App() {
             setActivePillar('analytics');
             document.getElementById('analytics')?.scrollIntoView({ behavior: 'smooth' });
           }}
-          className="flex flex-col items-center gap-1 p-1 text-[10px] text-slate-400 hover:text-sky-300"
+          className="flex flex-col items-center gap-1 p-1 text-[10px] text-slate-500 hover:text-blue-600"
         >
           <BarChart3 className="w-4 h-4" />
           <span>Analytics</span>
@@ -157,7 +155,7 @@ export default function App() {
 
         <button
           onClick={handleOpenDemoModal}
-          className="flex flex-col items-center gap-1 p-1 text-[10px] text-sky-400 font-semibold"
+          className="flex flex-col items-center gap-1 p-1 text-[10px] text-blue-600 font-semibold"
         >
           <PhoneCall className="w-4 h-4" />
           <span>Demo</span>

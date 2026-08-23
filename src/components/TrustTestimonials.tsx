@@ -4,7 +4,7 @@ import { TESTIMONIALS } from '../data/educaPilotData';
 
 export const TrustTestimonials: React.FC = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-50 via-sky-50/20 to-indigo-50/20 relative overflow-hidden border-t border-slate-200">
+    <section className="py-20 bg-gradient-to-b from-slate-50 via-sky-50/20 to-indigo-50/20 text-slate-900 relative overflow-hidden border-t border-slate-200">
       {/* Background Glassy Glow */}
       <div className="absolute top-1/3 left-10 w-[500px] h-[500px] bg-sky-200/30 rounded-full blur-[140px] pointer-events-none -z-10" />
       <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-indigo-200/30 rounded-full blur-[130px] pointer-events-none -z-10" />
@@ -16,7 +16,7 @@ export const TrustTestimonials: React.FC = () => {
             <span>Proven Institutional Impact</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight">
-            Trusted by <span className="bg-gradient-to-r from-sky-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">1,200+ Leaders</span>
+            Trusted by <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">1,200+ Leaders</span>
           </h2>
           <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
             See how top international K-12 institutions and competitive NEET/JEE coaching academies transform student outcomes and campus operations with EducaPilot.
@@ -28,7 +28,7 @@ export const TrustTestimonials: React.FC = () => {
           {TESTIMONIALS.map((item) => (
             <div
               key={item.id}
-              className="p-6 rounded-3xl bg-white/80 backdrop-blur-md border border-white/90 hover:border-indigo-400/60 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:bg-white transition-all duration-300 flex flex-col justify-between space-y-4 group"
+              className="p-6 rounded-3xl bg-white/85 backdrop-blur-md border border-white/90 hover:border-indigo-400/60 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:bg-white transition-all duration-300 flex flex-col justify-between space-y-4 group"
             >
               <div className="space-y-3">
                 {/* Star rating */}
@@ -68,30 +68,30 @@ export const TrustTestimonials: React.FC = () => {
           ))}
         </div>
 
-        {/* Security & Compliance Badges Strip */}
-        <div className="mt-16 p-6 rounded-3xl bg-slate-900 text-white border border-slate-800 grid grid-cols-2 md:grid-cols-4 gap-6 items-center text-center shadow-lg">
+        {/* Security & Compliance Badges Strip (Light Theme) */}
+        <div className="mt-16 p-6 rounded-3xl bg-white/90 backdrop-blur-md border border-slate-200/90 grid grid-cols-2 md:grid-cols-4 gap-6 items-center text-center shadow-lg shadow-slate-200/50 text-slate-800">
           <div className="flex flex-col items-center space-y-1">
-            <ShieldCheck className="w-6 h-6 text-sky-400" />
-            <span className="text-xs font-bold text-white">ISO 27001 Certified</span>
-            <span className="text-[10px] text-slate-400">Bank-Grade Data Encryption</span>
+            <ShieldCheck className="w-6 h-6 text-blue-600" />
+            <span className="text-xs font-bold text-slate-900">ISO 27001 Certified</span>
+            <span className="text-[10px] text-slate-500">Bank-Grade Data Encryption</span>
           </div>
 
           <div className="flex flex-col items-center space-y-1">
-            <Lock className="w-6 h-6 text-indigo-400" />
-            <span className="text-xs font-bold text-white">FERPA &amp; GDPR Compliant</span>
-            <span className="text-[10px] text-slate-400">100% Student Privacy Guard</span>
+            <Lock className="w-6 h-6 text-indigo-600" />
+            <span className="text-xs font-bold text-slate-900">FERPA &amp; GDPR Compliant</span>
+            <span className="text-[10px] text-slate-500">100% Student Privacy Guard</span>
           </div>
 
           <div className="flex flex-col items-center space-y-1">
-            <CheckCircle2 className="w-6 h-6 text-emerald-400" />
-            <span className="text-xs font-bold text-white">99.99% Uptime SLA</span>
-            <span className="text-[10px] text-slate-400">Zero-Lag Exam Hosting</span>
+            <CheckCircle2 className="w-6 h-6 text-emerald-600" />
+            <span className="text-xs font-bold text-slate-900">99.99% Uptime SLA</span>
+            <span className="text-[10px] text-slate-500">Zero-Lag Exam Hosting</span>
           </div>
 
           <div className="flex flex-col items-center space-y-1">
-            <Award className="w-6 h-6 text-purple-400" />
-            <span className="text-xs font-bold text-white">24/7 Dedicated Support</span>
-            <span className="text-[10px] text-slate-400">Under 5-Min Response Guarantee</span>
+            <Award className="w-6 h-6 text-purple-600" />
+            <span className="text-xs font-bold text-slate-900">24/7 Dedicated Support</span>
+            <span className="text-[10px] text-slate-500">Under 5-Min Response Guarantee</span>
           </div>
         </div>
       </div>

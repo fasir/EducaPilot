@@ -10,12 +10,17 @@ import {
   PhoneCall,
   ArrowRight,
   ShieldCheck,
-  ChevronRight
+  ChevronRight,
+  House,
+  Info,
+  Mail
 } from 'lucide-react';
 import { PillarType } from '../types';
 import { EducaPilotLogo } from './EducaPilotLogo';
 
 interface NavbarProps {
+  activeView: 'home' | 'about' | 'lms' | 'erp' | 'contact';
+  onNavigate: (view: 'home' | 'about' | 'lms' | 'erp' | 'contact') => void;
   activePillar: PillarType;
   onSelectPillar: (pillar: PillarType) => void;
   onOpenDemoModal: () => void;
@@ -23,6 +28,8 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
+  activeView,
+  onNavigate,
   activePillar,
   onSelectPillar,
   onOpenDemoModal,
@@ -42,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navItems: { id: PillarType; label: string; icon: React.ReactNode; isPillar?: boolean }[] = [
     { id: 'erp', label: 'School ERP', icon: <Layers className="w-3.5 h-3.5" />, isPillar: true },
     { id: 'lms', label: 'LMS Platform', icon: <BookOpen className="w-3.5 h-3.5" />, isPillar: true },
-    { id: 'testex', label: 'Test-Ex CBT', icon: <CheckCircle2 className="w-3.5 h-3.5" />, isPillar: true },
+    
   ];
 
   const scrollToSection = (id: string) => {
@@ -65,7 +72,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center justify-between">
             {/* Brand Official Logo */}
             <a
-              href="#"
+              href="#home"
+              onClick={(event) => { event.preventDefault(); onNavigate('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               className="flex items-center group focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-xl"
               aria-label="EducaPilot Home"
             >
@@ -74,12 +82,26 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* Desktop Navigation Links */}
             <nav className="site-header__nav hidden md:flex items-center gap-1 bg-slate-100 p-1.5 rounded-full backdrop-blur-md shadow-inner">
+              <button onClick={() => { onNavigate('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[13px] font-semibold transition-all duration-200 ${activeView === 'home' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-900 hover:bg-white'}`}><House className="w-3.5 h-3.5" /> Home</button>
               {navItems.map((item) => {
-                const isSelected = item.isPillar && activePillar === item.id;
+                const isSelected = item.id === 'lms' ? activeView === 'lms' : item.id === 'erp' ? activeView === 'erp' : item.isPillar && activePillar === item.id;
                 return (
                   <button
                     key={item.id}
                     onClick={() => {
+                      if (item.id === 'lms') {
+                        onNavigate('lms');
+                        setMobileMenuOpen(false);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return;
+                      }
+                      if (item.id === 'erp') {
+                        onNavigate('erp');
+                        setMobileMenuOpen(false);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return;
+                      }
+                      onNavigate('home');
                       if (item.isPillar) {
                         onSelectPillar(item.id as PillarType);
                         scrollToSection(item.id);
@@ -99,6 +121,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </button>
                 );
               })}
+              <button onClick={() => { onNavigate('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[13px] font-semibold transition-all duration-200 ${activeView === 'about' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-900 hover:bg-white'}`}><Info className="w-3.5 h-3.5" /> About Us</button>
+              <button onClick={() => { onNavigate('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[13px] font-semibold transition-all duration-200 ${activeView === 'contact' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-900 hover:bg-white'}`}><Mail className="w-3.5 h-3.5" /> Contact Us</button>
             </nav>
 
             {/* Desktop Action Buttons */}
@@ -108,7 +132,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-[13px] font-semibold text-blue-700 bg-blue-50 border border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-200 group"
               >
                 <span className="w-2 h-2 rounded-full bg-blue-500 animate-ping" />
-                <span>Live Test-Ex CBT</span>
+                <span>Live Test-Ex </span>
                 <ChevronRight className="w-3.5 h-3.5 text-blue-500 group-hover:translate-x-0.5 transition-transform" />
               </button>
 
@@ -116,7 +140,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onClick={onOpenDemoModal}
                 className="flex items-center gap-2 px-4 py-2 rounded-xl text-[13px] font-semibold text-white bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-600 hover:from-blue-400 hover:to-purple-500 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/35 active:scale-95 transition-all duration-200"
               >
-                <span>Book Campus Demo</span>
+                <span>Book A Demo</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
@@ -137,6 +161,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
+
           </div>
         </div>
 
@@ -147,14 +172,28 @@ export const Navbar: React.FC<NavbarProps> = ({
               Platform Modules
             </div>
             <div className="grid grid-cols-3 gap-2">
+              <button onClick={() => { onNavigate('home'); setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="col-span-3 flex items-center justify-center gap-2 p-2.5 rounded-xl text-center text-[13px] font-semibold border border-blue-200 bg-blue-50 text-blue-700"><House className="h-4 w-4" /> Home</button>
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => {
+                    onNavigate('home');
+                    if (item.id === 'lms') {
+                      onNavigate('lms');
+                      setMobileMenuOpen(false);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                      return;
+                    }
+                    if (item.id === 'erp') {
+                      onNavigate('erp');
+                      setMobileMenuOpen(false);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                      return;
+                    }
                     onSelectPillar(item.id);
                     scrollToSection(item.id);
                   }}
-                  className={`flex flex-col items-center justify-center gap-1.5 p-2.5 rounded-xl text-center text-[13px] font-medium border transition-all ${activePillar === item.id
+                  className={`flex flex-col items-center justify-center gap-1.5 p-2.5 rounded-xl text-center text-[13px] font-medium border transition-all ${(item.id === 'lms' ? activeView === 'lms' : item.id === 'erp' ? activeView === 'erp' : activePillar === item.id)
                     ? 'bg-blue-50 border-blue-300 text-blue-700'
                     : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100'
                     }`}
@@ -165,6 +204,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <span className="text-[13px] font-medium">{item.label}</span>
                 </button>
               ))}
+              <button onClick={() => { onNavigate('about'); setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="col-span-3 flex items-center justify-center gap-2 p-2.5 rounded-xl text-center text-[13px] font-semibold border border-slate-200 bg-slate-50 text-slate-700"><Info className="h-4 w-4" /> About Us</button>
+              <button onClick={() => { onNavigate('contact'); setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="col-span-3 flex items-center justify-center gap-2 p-2.5 rounded-xl text-center text-[13px] font-semibold border border-blue-200 bg-blue-50 text-blue-700"><Mail className="h-4 w-4" /> Contact Us</button>
             </div>
 
             <div className="pt-2 border-t border-slate-200 flex flex-col gap-2">

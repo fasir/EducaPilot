@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { WhyEducaPilotSection } from './components/WhyEducaPilotSection';
@@ -9,6 +9,11 @@ import { TrustTestimonials } from './components/TrustTestimonials';
 import { InteractiveFaq } from './components/InteractiveFaq';
 import { DemoModal } from './components/DemoModal';
 import { Footer } from './components/Footer';
+import { AboutUs } from './components/AboutUs';
+import { LmsPlatform } from './components/LmsPlatform';
+import { AppDownloadSection } from './components/AppDownloadSection';
+import { SchoolErp } from './components/SchoolErp';
+import { ContactUs } from './components/ContactUs';
 import { PillarType } from './types';
 import {
   Layers,
@@ -19,8 +24,30 @@ import {
 } from 'lucide-react';
 
 export default function App() {
+  type View = 'home' | 'about' | 'lms' | 'erp' | 'contact';
+  const getViewFromPath = (): View => {
+    if (window.location.pathname === '/about') return 'about';
+    if (window.location.pathname === '/lms-platform') return 'lms';
+    if (window.location.pathname === '/school-erp') return 'erp';
+    if (window.location.pathname === '/contact') return 'contact';
+    return 'home';
+  };
+  const [activeView, setActiveView] = useState<View>(getViewFromPath);
   const [activePillar, setActivePillar] = useState<PillarType>('testex');
   const [isDemoModalOpen, setIsDemoModalOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handlePopState = () => setActiveView(getViewFromPath());
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  const navigateTo = (view: View) => {
+    const path = view === 'about' ? '/about' : view === 'lms' ? '/lms-platform' : view === 'erp' ? '/school-erp' : view === 'contact' ? '/contact' : '/';
+    if (window.location.pathname !== path) window.history.pushState({}, '', path);
+    setActiveView(view);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleSelectPillar = (pillar: PillarType) => {
     setActivePillar(pillar);
@@ -31,6 +58,7 @@ export default function App() {
   };
 
   const handleOpenTestExSimulator = () => {
+    navigateTo('home');
     setActivePillar('testex');
     const el = document.getElementById('testex');
     if (el) {
@@ -42,6 +70,8 @@ export default function App() {
     <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-blue-200 selection:text-slate-900 pb-16 sm:pb-0">
       {/* Top Navbar */}
       <Navbar
+        activeView={activeView}
+        onNavigate={navigateTo}
         activePillar={activePillar}
         onSelectPillar={handleSelectPillar}
         onOpenDemoModal={handleOpenDemoModal}
@@ -50,6 +80,7 @@ export default function App() {
 
       {/* Main Content Sections */}
       <main>
+        {activeView === 'about' ? <AboutUs onOpenDemoModal={handleOpenDemoModal} /> : activeView === 'lms' ? <LmsPlatform onOpenDemoModal={handleOpenDemoModal} /> : activeView === 'erp' ? <SchoolErp onOpenDemoModal={handleOpenDemoModal} /> : activeView === 'contact' ? <ContactUs /> : <>
         {/* Hero with interactive live cockpit */}
         <HeroSection
           onSelectPillar={handleSelectPillar}
@@ -83,13 +114,18 @@ export default function App() {
         {/* Searchable FAQ Accordion (Light Canvas) */}
         <InteractiveFaq />
 
+        </>}
+
       </main>
+
+      <AppDownloadSection />
 
       {/* Footer */}
       <Footer
         onSelectPillar={handleSelectPillar}
         onOpenDemoModal={handleOpenDemoModal}
         onOpenTestExSimulator={handleOpenTestExSimulator}
+        onNavigate={navigateTo}
       />
 
       {/* Interactive Personalized Demo Walkthrough Modal */}

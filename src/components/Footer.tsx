@@ -9,12 +9,14 @@ import { PillarType } from '../types';
 import { EducaPilotLogo } from './EducaPilotLogo';
 
 interface FooterProps {
+  onNavigate: (view: 'home' | 'about' | 'lms' | 'erp' | 'contact') => void;
   onSelectPillar: (pillar: PillarType) => void;
   onOpenDemoModal: () => void;
   onOpenTestExSimulator: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
+  onNavigate,
   onSelectPillar,
   onOpenDemoModal,
   onOpenTestExSimulator
@@ -49,11 +51,13 @@ export const Footer: React.FC<FooterProps> = ({
               Core Modules
             </div>
             <ul className="space-y-2">
+              <li><button onClick={() => { onNavigate('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-sky-300 transition-colors">About EducaPilot</button></li>
+              <li><button onClick={() => { onNavigate('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-sky-300 transition-colors">Contact us</button></li>
               <li>
                 <button
                   onClick={() => {
-                    onSelectPillar('erp');
-                    document.getElementById('erp')?.scrollIntoView({ behavior: 'smooth' });
+                    onNavigate('erp');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="hover:text-sky-300 transition-colors"
                 >
@@ -63,8 +67,8 @@ export const Footer: React.FC<FooterProps> = ({
               <li>
                 <button
                   onClick={() => {
-                    onSelectPillar('lms');
-                    document.getElementById('lms')?.scrollIntoView({ behavior: 'smooth' });
+                    onNavigate('lms');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="hover:text-sky-300 transition-colors"
                 >

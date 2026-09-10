@@ -5034,6 +5034,29 @@ footer .border-slate-800 {
   }
 }
 
+@media (max-width: 768px) {
+  .features-hub__nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 4px 20px 12px;
+    margin-left: -20px;
+    margin-right: -20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .features-hub__nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .features-hub__nav-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+}
+
 @media (max-width: 640px) {
   .features-hub__showcase {
     padding: 16px;
@@ -5059,4 +5082,4 @@ footer .border-slate-800 {
     padding: 7px 13px;
     font-size: 12px;
   }
-}
+}

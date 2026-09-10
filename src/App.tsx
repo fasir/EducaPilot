@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { WhyEducaPilotSection } from './components/WhyEducaPilotSection';
 import { TurningPointSection } from './components/TurningPointSection';
+import { FeaturesSection } from './components/FeaturesSection';
 import { CoreFeaturesSection } from './components/CoreFeaturesSection';
 import { StudentShowcaseStrip } from './components/StudentShowcaseStrip';
 import { TrustTestimonials } from './components/TrustTestimonials';
@@ -94,6 +95,8 @@ export default function App() {
         />
 
         <TurningPointSection />
+
+        <FeaturesSection />
 
         <CoreFeaturesSection />
 

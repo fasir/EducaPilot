@@ -46,13 +46,13 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenDemoModal }) => (
         <div className="about-pillars__grid">
           <article className="about-pillar about-pillar--mission">
             <div className="about-pillar__icon"><Compass className="h-5 w-5" /></div><span>01 / Mission</span>
-            <h3>Make meaningful learning easier to deliver.</h3>
-            <p>We connect school operations, teaching, and assessment so educators can focus on outcomes, not obstacles.</p>
+            <h3>Our Mission</h3>
+            <p>To build a unified, modular, and scalable enterprise technology platform that connects every dimension of educational operations. Through engineering excellence, intelligent automation, and accessible innovation, we enable institutions and educators to streamline administration, enhance campus experiences, improve operational efficiency, and scale with confidence.</p>
           </article>
           <article className="about-pillar about-pillar--vision">
             <div className="about-pillar__icon"><Sparkles className="h-5 w-5" /></div><span>02 / Vision</span>
-            <h3>A future where every learner is seen.</h3>
-            <p>We imagine education that is intelligent, inclusive, and personal at every scale, from the first classroom to the last mile.</p>
+            <h3>Our Vision</h3>
+            <p>To democratize institutional technology by creating a unified, intelligent, and universally accessible digital ecosystem that seamlessly connects every dimension of educational operations—empowering institutions to operate more efficiently, deliver exceptional experiences, and shape the future of education.</p>
           </article>
         </div>
       </div>

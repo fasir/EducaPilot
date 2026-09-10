@@ -5058,6 +5058,15 @@ footer .border-slate-800 {
 }
 
 @media (max-width: 640px) {
+  .features-hub__heading h2 {
+    font-size: clamp(1.45rem, 5.6vw, 2.15rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  .features-hub__heading-nowrap {
+    white-space: nowrap;
+  }
+
   .features-hub__showcase {
     padding: 16px;
     border-radius: 18px;

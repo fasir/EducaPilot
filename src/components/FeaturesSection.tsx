@@ -389,7 +389,10 @@ export const FeaturesSection: React.FC = () => {
         <div className="features-hub__heading">
           <h2>
             Features<br />
-            <span>Built for Institutional Excellence</span>
+            <span>
+              Built for <br className="sm:hidden" />
+              <span className="features-hub__heading-nowrap">Institutional Excellence</span>
+            </span>
           </h2>
         </div>
 

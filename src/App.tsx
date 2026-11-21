@@ -82,40 +82,40 @@ export default function App() {
       {/* Main Content Sections */}
       <main>
         {activeView === 'about' ? <AboutUs onOpenDemoModal={handleOpenDemoModal} /> : activeView === 'lms' ? <LmsPlatform onOpenDemoModal={handleOpenDemoModal} /> : activeView === 'erp' ? <SchoolErp onOpenDemoModal={handleOpenDemoModal} /> : activeView === 'contact' ? <ContactUs /> : <>
-        {/* Hero with interactive live cockpit */}
-        <HeroSection
-          onSelectPillar={handleSelectPillar}
-          onOpenDemoModal={handleOpenDemoModal}
-          onOpenTestExSimulator={handleOpenTestExSimulator}
-        />
+          {/* Hero with interactive live cockpit */}
+          <HeroSection
+            onSelectPillar={handleSelectPillar}
+            onOpenDemoModal={handleOpenDemoModal}
+            onOpenTestExSimulator={handleOpenTestExSimulator}
+          />
 
-        <WhyEducaPilotSection
-          onOpenDemoModal={handleOpenDemoModal}
-          onOpenTestExSimulator={handleOpenTestExSimulator}
-        />
+          <WhyEducaPilotSection
+            onOpenDemoModal={handleOpenDemoModal}
+            onOpenTestExSimulator={handleOpenTestExSimulator}
+          />
 
-        <TurningPointSection />
+          <TurningPointSection />
 
-        <FeaturesSection />
+          {/* <FeaturesSection /> */}
 
-        <CoreFeaturesSection />
+          <CoreFeaturesSection />
 
-        {/* Live E-Learning Students Visual Showcase Strip */}
-        <StudentShowcaseStrip
-          onOpenDemoModal={handleOpenDemoModal}
-          onOpenTestExSimulator={handleOpenTestExSimulator}
-        />
-
-       
-
-      
+          {/* Live E-Learning Students Visual Showcase Strip */}
+          <StudentShowcaseStrip
+            onOpenDemoModal={handleOpenDemoModal}
+            onOpenTestExSimulator={handleOpenTestExSimulator}
+          />
 
 
-        {/* Trust & Testimonials (Light Canvas) */}
-        <TrustTestimonials />
 
-        {/* Searchable FAQ Accordion (Light Canvas) */}
-        <InteractiveFaq />
+
+
+
+          {/* Trust & Testimonials (Light Canvas) */}
+          <TrustTestimonials />
+
+          {/* Searchable FAQ Accordion (Light Canvas) */}
+          <InteractiveFaq />
 
         </>}
 

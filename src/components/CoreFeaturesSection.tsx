@@ -88,7 +88,10 @@ export const CoreFeaturesSection: React.FC = () => {
       <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-24 relative z-10">
         {/* Section Heading with Brand Eyebrow */}
         <div className="core-features__heading">
-
+          <div className="turning-point__eyebrow">
+            <Sparkles size={13} className="text-purple-600" />
+            <span>Teacher Cockpit</span>
+          </div>
           <h2>
             Everything teachers need<br />
             <span>to help learners thrive.</span>

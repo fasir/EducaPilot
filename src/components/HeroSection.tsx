@@ -243,28 +243,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal, onOpe
         </div>
 
         {/* ── Portrait gallery row ─────────────────────────── */}
-        <div className="hero-gallery" aria-label="EducaPilot learners and mentors">
-          <GraduationCap className="hero-cap" aria-hidden="true" />
-          <span className="hero-spark hero-spark--left" aria-hidden="true">✦</span>
-          <span className="hero-spark hero-spark--right" aria-hidden="true">✦</span>
-          <span className="hero-spark hero-spark--far" aria-hidden="true">✦</span>
-          <div className="hero-doodle hero-doodle--left" aria-hidden="true" />
-          <div className="hero-doodle hero-doodle--right" aria-hidden="true" />
-          {portraits.map((portrait, index) => (
-            <motion.img
-              key={portrait.src}
-              src={portrait.src}
-              alt=""
-              referrerPolicy="no-referrer"
-              className={portrait.className}
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.35 + index * 0.07 }}
-            />
-          ))}
-          <div className="hero-stat hero-stat--students"><strong>400k+</strong><span>Students</span></div>
-          <div className="hero-stat hero-stat--tutors"><strong>1000+</strong><span>Expert Tutors</span></div>
-        </div>
+
       </div>
 
       {/* Progress bar */}

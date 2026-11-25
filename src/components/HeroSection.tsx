@@ -142,20 +142,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal, onOpe
       <div className="mx-auto max-w-7xl px-5 sm:px-8 relative z-10">
         <div className="hero-copy text-center">
 
-          {/* Social proof badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="hero-proof"
-          >
-            <div className="hero-proof__faces" aria-hidden="true">
-              {portraits.slice(1, 4).map((p) => (
-                <img key={p.src} src={p.src} alt="" referrerPolicy="no-referrer" />
-              ))}
-            </div>
-            <span><strong>1000+</strong> Top Class Mentors</span>
-          </motion.div>
+        
 
           {/* Animated slide copy with equal height wrapper */}
           <div className="hero-slide-wrapper">

@@ -22,7 +22,7 @@ export const WhyEducaPilotSection: React.FC<WhyEducaPilotSectionProps> = ({
       <div className="why-educapilot__glow why-educapilot__glow--left" aria-hidden="true" />
       <div className="why-educapilot__glow why-educapilot__glow--right" aria-hidden="true" />
 
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:py-24">
+      <div className="why-educapilot__layout mx-auto max-w-7xl">
         {/* Left Column: Refined Value Proposition */}
         <div className="why-educapilot__copy">
           <div className="why-eyebrow">
@@ -92,13 +92,11 @@ export const WhyEducaPilotSection: React.FC<WhyEducaPilotSectionProps> = ({
             </button>
           </div>
 
-          {/* Trust Metrics */}
-        
+         
         </div>
 
         {/* Right Column: Clean, High-Impact Image Showcase */}
         <div className="why-image-wrapper" aria-label="EducaPilot student learning preview">
-          <div className="why-image-backdrop" aria-hidden="true" />
           <div className="why-image-card">
             <img
               src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&auto=format&fit=crop&q=85"

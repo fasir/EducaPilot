@@ -62,8 +62,28 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <>
+      {!isScrolled && (
+        <div className="site-announcement">
+          <div className="site-announcement__inner">
+            <span className="site-announcement__copy site-announcement__copy--desktop">
+              One platform for smarter campus operations and personalized learning.
+            </span>
+            <span className="site-announcement__copy site-announcement__copy--mobile">
+              School ERP | LMS | Test-Ex
+            </span>
+            <button
+              type="button"
+              className="site-announcement__button"
+              onClick={onOpenDemoModal}
+            >
+              Book a free demo
+              <ArrowRight size={13} aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+      )}
       <header
-        className={`site-header fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        className={`site-header fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${!isScrolled ? 'site-header--announcement' : ''} ${isScrolled
           ? 'bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-lg shadow-slate-200/30 py-2.5'
           : 'bg-white/80 backdrop-blur-md py-4'
           }`}
